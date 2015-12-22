@@ -11,17 +11,17 @@ def vote():
     url = ("http://www.surveygizmo.com/s3/2485907/"
            "Readers-Choice-Best-Indie-Video-of-2015")
     driver.get(url)
-    random_sleep(5, 15)
+    random_sleep(4, 6)
 
     query = ("document.querySelectorAll("
              "'div.sg-question-options label')[6].click();")
     driver.execute_script(query)
-    random_sleep(5, 15)
+    random_sleep(2, 4)
 
     submit = ("document.querySelector("
               "'input[name=sGizmoSubmitButton]').click();")
     driver.execute_script(submit)
-    random_sleep(2, 5)
+    random_sleep(2, 4)
 
     driver.delete_all_cookies()
     driver.quit()
@@ -50,7 +50,7 @@ def main():
     for i in xrange(n):
         vote()
         print_status(i + 1)
-        random_sleep(30, 90)
+        random_sleep(10, 20)
 
 
 if __name__ == '__main__':
